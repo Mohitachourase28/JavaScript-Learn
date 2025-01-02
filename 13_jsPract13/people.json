@@ -1,0 +1,20 @@
+[{
+    "name": "Spongebob",
+    "age": 30,
+    "isStudent": true
+},
+{ 
+    "name": "Patrick",
+    "age": 34, 
+    "isStudent": false
+}, 
+{ 
+    "name": "Squidward",
+    "age": 19,
+    "isStudent": true
+},
+{
+    "name": "Sandy",
+    "age": 19,
+    "isStudent": true
+}]
