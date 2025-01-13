@@ -6,7 +6,6 @@
 This folder contains a project exploring fundamental JavaScript concepts and their practical applications. Below is a detailed summary of the topics covered.
 
 ---
-
 ### **Key Topics and Concepts**
 
 1. **JavaScript Basics**
