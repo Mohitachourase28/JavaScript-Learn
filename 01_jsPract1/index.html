@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Learning Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    .example {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #ecf0f1;
+      border-radius: 5px;
+    }
+    input, button {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    #output {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>JavaScript Learning Example</h2>
+
+  <div class="example">
+    <h3>Template Literal & Window Alert</h3>
+    <button onclick="showAlert()">Click for Alert</button>
+    <script>
+      function showAlert() {
+        const name = "John";
+        const age = 25;
+        alert(`Hello, ${name}. You are ${age} years old.`);
+      }
+    </script>
+  </div>
+
+  <div class="example">
+    <h3>Manipulating HTML Using getElementById</h3>
+    <p id="message">This text will change after the button is clicked.</p>
+    <button onclick="changeText()">Click to Change Text</button>
+    <script>
+      function changeText() {
+        document.getElementById("message").textContent = "The text has been changed!";
+      }
+    </script>
+  </div>
+
+  <div class="example">
+    <h3>Arithmetic Operators & Operator Precedence</h3>
+    <p>Result of 3 + 5 * 2 = <span id="arithmeticResult"></span></p>
+    <script>
+      const result = 3 + 5 * 2;
+      document.getElementById("arithmeticResult").textContent = result;
+    </script>
+  </div>
+
+  <div class="example">
+    <h3>Accepting User Input with Window Prompt</h3>
+    <button onclick="getUserInput()">Click to Enter Name</button>
+    <script>
+      function getUserInput() {
+        const name = prompt("Enter your name:");
+        alert(`Hello, ${name}!`);
+      }
+    </script>
+  </div>
+
+  <div class="example">
+    <h3>Type Conversion Example</h3>
+    <button onclick="convertType()">Convert 10.5 to Integer</button>
+    <p>Converted value: <span id="convertedValue"></span></p>
+    <script>
+      function convertType() {
+        const value = 10.5;
+        const convertedValue = parseInt(value);
+        document.getElementById("convertedValue").textContent = convertedValue;
+      }
+    </script>
+  </div>
+
+  <div class="example">
+    <h3>Counter Program with Const Variable</h3>
+    <p>Current Counter: <span id="counterValue">0</span></p>
+    <button onclick="incrementCounter()">Increment</button>
+    <script>
+      let counter = 0;
+      function incrementCounter() {
+        counter++;
+        document.getElementById("counterValue").textContent = counter;
+      }
+    </script>
+  </div>
+
+  <div class="example">
+    <h3>Math Object Methods</h3>
+    <p>Math.round(3.7) = <span id="mathRound"></span></p>
+    <p>Math.floor(3.7) = <span id="mathFloor"></span></p>
+    <p>Math.ceil(3.2) = <span id="mathCeil"></span></p>
+    <p>Math.abs(-10) = <span id="mathAbs"></span></p>
+    <p>Math.pow(2, 3) = <span id="mathPow"></span></p>
+    <script>
+      document.getElementById("mathRound").textContent = Math.round(3.7);
+      document.getElementById("mathFloor").textContent = Math.floor(3.7);
+      document.getElementById("mathCeil").textContent = Math.ceil(3.2);
+      document.getElementById("mathAbs").textContent = Math.abs(-10);
+      document.getElementById("mathPow").textContent = Math.pow(2, 3);
+    </script>
+  </div>
+
+  <div class="example">
+    <h3>Math Methods: sqrt, log, sin, cos, tan</h3>
+    <p>Math.sqrt(16) = <span id="mathSqrt"></span></p>
+    <p>Math.log(10) = <span id="mathLog"></span></p>
+    <p>Math.sin(30) = <span id="mathSin"></span></p>
+    <p>Math.cos(30) = <span id="mathCos"></span></p>
+    <p>Math.tan(30) = <span id="mathTan"></span></p>
+    <script>
+      document.getElementById("mathSqrt").textContent = Math.sqrt(16);
+      document.getElementById("mathLog").textContent = Math.log(10);
+      document.getElementById("mathSin").textContent = Math.sin(30);
+      document.getElementById("mathCos").textContent = Math.cos(30);
+      document.getElementById("mathTan").textContent = Math.tan(30);
+    </script>
+  </div>
+
+</body>
+</html>
