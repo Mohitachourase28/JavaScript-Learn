@@ -29,5 +29,39 @@ This project covers the foundational concepts of JavaScript including variables,
 - Trigonometric Methods: `Math.sin()`, `Math.cos()`, `Math.tan()`
 - Other Methods: `Math.abs()`, `Math.sign()`
 
-This project helped solidify my understanding of these concepts and how they are applied in practical coding scenarios.
+
+## [02_jsPract2](./02_jsPract2/script.js)
+
+# Random Number Generator and JavaScript Basics  
+
+This project is a collection of JavaScript concepts and examples I studied and implemented to strengthen my understanding of the language. Here's an overview of the topics covered:  
+
+---
+
+## Features  
+
+### 1. **Random Number Generator**  
+- Implemented a function that generates a random number using a specified `min` and `max` value.  
+
+---
+
+### 2. **If Statements**  
+- Learned how to use `if` statements to execute code based on conditions.  
+- Practiced examples of handling scenarios where:  
+  - A condition is true, and specific code is executed.  
+  - If not, alternate code is executed.  
+
+---
+
+### 3. **Checkbox `.checked` Property**  
+- Studied the `.checked` property in HTML. This property determines whether a checkbox or radio button element is checked.  
+- Implemented a **payment modes** example where users could select their payment method (Visa, MasterCard, or PayPal).  
+
+---
+
+### 4. **Ternary Operator**  
+- Explored the ternary operator, a shortcut for `if...else` statements.  
+- Syntax:  
+  ```javascript
+  condition ? codeIfTrue : codeIfFalse;
 
