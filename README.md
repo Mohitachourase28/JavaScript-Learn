@@ -610,9 +610,10 @@ class Dog extends Animal {
 
 const dog = new Dog('Buddy');
 dog.speak(); // Output: Buddy barks.
+```
 ---
 
-## [08_jsPract8](./08_jsPract8/)
+## [08_jsPract8](./08_jsPract8/script.js)
 # Topics Studied: Advanced JavaScript Concepts with Examples
 
 ## `super` Keyword
