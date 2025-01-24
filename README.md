@@ -324,3 +324,179 @@ console.log(squared); // Output: [1, 4, 9, 16]
 - Building programs like the Dice Roller and Random Password Generator helps solidify foundational concepts and practice real-world applications.
 
 ---
+
+## [06_jsPract6](./06_jsPract6/)
+# JavaScript Advanced Concepts: Filter, Reduce, Function Expressions, and More
+
+This project highlights my learning journey through advanced JavaScript concepts, such as array methods (`filter` and `reduce`), function expressions, callbacks, higher-order functions, closures, event listeners, arrow functions, and objects. Each topic includes examples to demonstrate their practical usage.
+
+---
+
+## Topics Covered
+
+### 1. **`.filter()` Method**
+- Creates a new array by filtering out elements based on a condition provided in a callback function.
+
+#### Example:
+```javascript
+const numbers = [1, 2, 3, 4, 5, 6];
+const evenNumbers = numbers.filter((num) => num % 2 === 0);
+console.log(evenNumbers); // Output: [2, 4, 6]
+
+const words = ["apple", "banana", "cherry", "date"];
+const longWords = words.filter((word) => word.length > 5);
+console.log(longWords); // Output: ["banana", "cherry"]
+```
+
+---
+
+### 2. **`.reduce()` Method**
+- Reduces the elements of an array into a single value by applying a callback function iteratively.
+
+#### Example:
+```javascript
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(sum); // Output: 10
+
+const product = numbers.reduce((accumulator, currentValue) => accumulator * currentValue, 1);
+console.log(product); // Output: 24
+```
+
+---
+
+### 3. **Function Expressions**
+
+#### Function Declaration
+- Defines a reusable block of code that performs a specific task.
+
+#### Example:
+```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+console.log(greet("Alice")); // Output: Hello, Alice!
+```
+
+#### Function Expression
+- A way to define functions as values or variables.
+
+#### Example:
+```javascript
+const greet = function(name) {
+  return `Hi, ${name}!`;
+};
+console.log(greet("Bob")); // Output: Hi, Bob!
+```
+
+---
+
+### 4. **Other Key Concepts**
+
+#### **Callbacks in Asynchronous Operations**
+- Functions passed as arguments to handle operations that take time to complete.
+
+#### Example:
+```javascript
+function fetchData(callback) {
+  setTimeout(() => {
+    console.log("Data fetched.");
+    callback();
+  }, 2000);
+}
+function processData() {
+  console.log("Processing data...");
+}
+fetchData(processData);
+```
+
+#### **Higher-Order Functions**
+- Functions that accept other functions as arguments or return them as results.
+
+#### Example:
+```javascript
+function higherOrder(func) {
+  func();
+}
+higherOrder(() => console.log("Hello from a higher-order function!"));
+```
+
+#### **Closures**
+- Functions that "close over" their lexical environment, retaining access to variables defined outside their scope.
+
+#### Example:
+```javascript
+function outerFunction(outerVariable) {
+  return function innerFunction(innerVariable) {
+    console.log(`Outer: ${outerVariable}, Inner: ${innerVariable}`);
+  };
+}
+const closure = outerFunction("outside");
+closure("inside"); // Output: Outer: outside, Inner: inside
+```
+
+#### **Event Listeners**
+- Functions that respond to user interactions or events.
+
+#### Example:
+```javascript
+const button = document.querySelector("button");
+button.addEventListener("click", () => {
+  console.log("Button clicked!");
+});
+```
+
+---
+
+### 5. **Arrow Functions**
+- A concise way to write function expressions. Ideal for simple functions used once.
+
+#### Syntax:
+```javascript
+(parameters) => some code
+```
+
+#### Example:
+```javascript
+const add = (a, b) => a + b;
+console.log(add(2, 3)); // Output: 5
+
+const greet = (name) => `Hello, ${name}!`;
+console.log(greet("Charlie")); // Output: Hello, Charlie!
+```
+
+---
+
+### 6. **Objects**
+- A collection of related properties and/or methods. Can represent real-world entities like people, products, or places.
+
+#### Example:
+```javascript
+const person = {
+  name: "Alice",
+  age: 30,
+  greet: function() {
+    console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+  }
+};
+person.greet(); // Output: Hi, I'm Alice and I'm 30 years old.
+
+const product = {
+  name: "Laptop",
+  price: 1000,
+  details() {
+    console.log(`${this.name} costs $${this.price}.`);
+  }
+};
+product.details(); // Output: Laptop costs $1000.
+```
+
+---
+
+## Lessons Learned
+- Array methods like `filter` and `reduce` are powerful tools for processing and transforming data.
+- Function declarations and expressions allow for modular, reusable code.
+- Concepts like callbacks, higher-order functions, and closures are foundational for handling asynchronous behavior and creating flexible code.
+- Arrow functions provide a succinct syntax, especially for one-liners.
+- Objects help organize data and behavior in a structured way.
+---
