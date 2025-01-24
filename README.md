@@ -753,4 +753,149 @@ const printDetails = ({ name, age }) => {
 
 const person = { name: 'Bob', age: 30 };
 printDetails(person); // Output: Name: Bob, Age: 30
+---
+
+## [09_jsPract9](./09_jsPract9/script.js)
+# Topics Studied: JavaScript Concepts with Examples
+
+## Nested Objects
+- Objects can contain other objects as properties.
+- Useful for representing more complex data structures.
+
+### Example 1: Person Object with Address and ContactInfo
+```javascript
+const person = {
+  name: "Alice",
+  address: {
+    street: "123 Main St",
+    city: "Springfield",
+    zip: "12345"
+  },
+  contactInfo: {
+    phone: "123-456-7890",
+    email: "alice@example.com"
+  }
+};
+
+console.log(person.address.city); // Output: Springfield
+console.log(person.contactInfo.phone); // Output: 123-456-7890
+```
+
+### Example 2: Shopping Cart with Nested Products
+```javascript
+const shoppingCart = {
+  items: [
+    { name: "Keyboard", price: 30 },
+    { name: "Mouse", price: 20 },
+    { name: "Monitor", price: 150 }
+  ]
+};
+
+console.log(shoppingCart.items[1].name); // Output: Mouse
+```
+
+## Arrays of Objects and Methods
+- Methods like `forEach()`, `map()`, `filter()`, `reduce()`, and `sort()` are used to manipulate arrays of objects.
+
+### Example 1: Using `forEach()`
+```javascript
+const users = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 }
+];
+
+users.forEach(user => console.log(user.name));
+// Output:
+// Alice
+// Bob
+```
+
+### Example 2: Using `map()`
+```javascript
+const names = users.map(user => user.name);
+console.log(names); // Output: ["Alice", "Bob"]
+```
+
+### Example 3: Using `filter()`
+```javascript
+const adults = users.filter(user => user.age >= 30);
+console.log(adults); // Output: [{ name: "Bob", age: 30 }]
+```
+
+### Example 4: Using `reduce()`
+```javascript
+const totalAge = users.reduce((sum, user) => sum + user.age, 0);
+console.log(totalAge); // Output: 55
+```
+
+### Example 5: Using `sort()`
+```javascript
+const sortedUsers = users.sort((a, b) => a.age - b.age);
+console.log(sortedUsers);
+// Output: [ { name: "Alice", age: 25 }, { name: "Bob", age: 30 } ]
+```
+
+## Shuffle an Array - Fisher-Yates Algorithm
+```javascript
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+const arr = [1, 2, 3, 4, 5];
+console.log(shuffleArray(arr));
+```
+
+## Date Objects
+- Used to handle dates and times.
+
+### Example:
+```javascript
+const now = new Date();
+console.log(now.toDateString()); // Output: Current date in readable format
+
+const customDate = new Date("2025-01-01");
+console.log(customDate.toISOString()); // Output: 2025-01-01T00:00:00.000Z
+```
+
+## Closure
+- A function defined inside another function.
+- The inner function can access variables in the outer function.
+
+### Example:
+```javascript
+function outerFunction() {
+  let count = 0;
+
+  return function innerFunction() {
+    count++;
+    console.log(count);
+  };
+}
+
+const counter = outerFunction();
+counter(); // Output: 1
+counter(); // Output: 2
+```
+
+## `setTimeout()`
+- Schedules a function to execute after a delay (in milliseconds).
+
+### Example:
+```javascript
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Executed after 2 seconds");
+}, 2000);
+
+console.log("End");
+// Output:
+// Start
+// End
+// Executed after 2 seconds
+---
 
