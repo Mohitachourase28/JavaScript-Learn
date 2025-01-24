@@ -898,5 +898,190 @@ console.log("End");
 // Start
 // End
 // Executed after 2 seconds
+```
 ---
 
+## [10_jsPract10](./10_jsPract10/script.js)
+## [10_jsPract10](./10_jsPract10/mathUtil.js)
+
+# Topics Studied: JavaScript Concepts with Examples
+
+## Digital Clock Program
+- A program that displays the current time and updates every second.
+
+### Example:
+```javascript
+function displayTime() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+
+  console.log(`${hours}:${minutes}:${seconds}`);
+}
+setInterval(displayTime, 1000);
+```
+
+## Stopwatch Program
+- A simple stopwatch program to track elapsed time.
+
+### Example:
+```javascript
+let startTime, intervalId;
+
+function startStopwatch() {
+  startTime = Date.now();
+  intervalId = setInterval(() => {
+    const elapsed = Date.now() - startTime;
+    console.log(`Elapsed Time: ${(elapsed / 1000).toFixed(2)} seconds`);
+  }, 1000);
+}
+
+function stopStopwatch() {
+  clearInterval(intervalId);
+  console.log("Stopwatch stopped.");
+}
+
+startStopwatch(); // Call to start the stopwatch
+// Call stopStopwatch() to stop it.
+```
+
+## ES6 Modules
+- Introduced in ECMAScript 2015.
+- Used for writing reusable code.
+
+### Example:
+**math.js:**
+```javascript
+export function add(a, b) {
+  return a + b;
+}
+
+export function subtract(a, b) {
+  return a - b;
+}
+```
+
+**main.js:**
+```javascript
+import { add, subtract } from './math.js';
+
+console.log(add(5, 3));      // Output: 8
+console.log(subtract(5, 3)); // Output: 2
+```
+
+## Synchronous and Asynchronous Code
+### Synchronous:
+- Executes line by line in sequence.
+
+### Example:
+```javascript
+console.log("Start");
+console.log("End");
+// Output:
+// Start
+// End
+```
+
+### Asynchronous:
+- Allows multiple operations to occur concurrently.
+
+### Example:
+```javascript
+console.log("Start");
+setTimeout(() => {
+  console.log("Async operation completed");
+}, 2000);
+console.log("End");
+// Output:
+// Start
+// End
+// Async operation completed
+```
+
+## Error Handling
+- Handle runtime errors using `try`, `catch`, and `finally`.
+
+### Example:
+```javascript
+try {
+  console.log(x); // x is not defined
+} catch (error) {
+  console.error("Error caught:", error.message);
+} finally {
+  console.log("This always executes");
+}
+```
+
+## Calculator Program
+- Perform basic arithmetic operations.
+
+### Example:
+```javascript
+function calculator(a, b, operator) {
+  switch (operator) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    case '*':
+      return a * b;
+    case '/':
+      return a / b;
+    default:
+      return "Invalid operator";
+  }
+}
+
+console.log(calculator(5, 3, '+')); // Output: 8
+console.log(calculator(5, 3, '*')); // Output: 15
+```
+
+## DOM (Document Object Model)
+- Represents the web page as an object tree.
+- JavaScript interacts with the DOM to dynamically change content, structure, and style.
+
+### Example:
+```html
+<div id="content">Hello, World!</div>
+<script>
+  const content = document.getElementById("content");
+  content.textContent = "Hello, DOM!";
+</script>
+```
+
+## Element Selectors
+- Methods to select HTML elements from the DOM.
+
+### Examples:
+1. `document.getElementById()`
+   ```javascript
+   const element = document.getElementById("header");
+   console.log(element);
+   ```
+
+2. `document.getElementsByClassName()`
+   ```javascript
+   const elements = document.getElementsByClassName("item");
+   console.log(elements[0]);
+   ```
+
+3. `document.getElementsByTagName()`
+   ```javascript
+   const elements = document.getElementsByTagName("p");
+   console.log(elements);
+   ```
+
+4. `document.querySelector()`
+   ```javascript
+   const element = document.querySelector(".main .item");
+   console.log(element);
+   ```
+
+5. `document.querySelectorAll()`
+   ```javascript
+   const elements = document.querySelectorAll(".item");
+   elements.forEach(el => console.log(el));
+   
+```
+---
