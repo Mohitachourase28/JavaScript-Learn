@@ -65,3 +65,68 @@ This project is a collection of JavaScript concepts and examples I studied and i
   ```javascript
   condition ? codeIfTrue : codeIfFalse;
 
+## [03_jsPract3](./03_jsPract3)
+# JavaScript Concepts and Number Guessing Game  
+
+This project showcases my learning journey through essential JavaScript concepts, including string manipulation, logical operators, equality operators, loops, and the creation of a **Number Guessing Game**.  
+
+---
+
+## Topics Covered  
+
+### 1. **String Slicing**  
+- Studied how to create substrings using the `String.slice(start, end)` method.  
+- Practiced examples to extract specific parts of a string.  
+
+---
+
+### 2. **Method Chaining**  
+- Learned about **method chaining**—calling multiple methods in a single continuous line of code.  
+- Compared using method chaining and not using it to observe differences in code readability and efficiency.  
+
+---
+
+### 3. **Logical Operators**  
+- Explored operators used to combine or manipulate boolean values (`true` or `false`):  
+  - **AND (`&&`)**: All conditions must be true.  
+  - **OR (`||`)**: At least one condition must be true.  
+  - **NOT (`!`)**: Negates a boolean value.  
+- Practiced examples to solidify understanding.  
+
+---
+
+### 4. **Equality and Comparison Operators**  
+- Studied the following operators with examples:  
+  - `=`: Assignment operator (assigns a value to a variable).  
+  - `==`: Comparison operator (checks if values are equal).  
+  - `===`: Strict equality operator (checks if values and data types are equal).  
+  - `!=`: Inequality operator (checks if values are not equal).  
+  - `!==`: Strict inequality operator (checks if values and data types are not equal).  
+
+---
+
+### 5. **Loops**  
+- Explored different types of loops for repeating code:  
+  - **While Loop**: Repeats code as long as a condition is true.  
+  - **Do-While Loop**: Executes code at least once, then repeats while the condition is true.  
+  - **For Loop**: Repeats code a limited number of times.  
+- Practiced with various examples to understand their behavior and use cases.  
+
+---
+
+### 6. **Number Guessing Game**  
+- Created a fun and interactive **Number Guessing Game** that incorporates:  
+  - Random number generation.  
+  - Conditional statements.  
+  - Loops for repeated guesses.  
+  - Logical and comparison operators for game logic.  
+
+---
+
+## Lessons Learned  
+- The significance of slicing and chaining methods to manipulate and enhance strings efficiently.  
+- Logical operators and equality operators provide the backbone of decision-making in JavaScript.  
+- Loops are essential for executing repetitive tasks effectively.  
+- Building projects like the **Number Guessing Game** helps apply concepts in a practical and engaging way.  
+
+---
