@@ -611,3 +611,145 @@ class Dog extends Animal {
 const dog = new Dog('Buddy');
 dog.speak(); // Output: Buddy barks.
 ---
+
+## [08_jsPract8](./08_jsPract8/)
+# Topics Studied: Advanced JavaScript Concepts with Examples
+
+## `super` Keyword
+- The `super` keyword is used in classes to:
+  1. Call the constructor of the parent class.
+  2. Access the properties and methods of a parent (superclass).
+
+### Example:
+```javascript
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name); // Call the parent class constructor
+    this.breed = breed;
+  }
+
+  speak() {
+    super.speak(); // Call the parent class method
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const dog = new Dog('Buddy', 'Golden Retriever');
+dog.speak();
+// Output:
+// Buddy makes a noise.
+// Buddy barks.
+```
+
+## `this` vs `super`
+- `this`: Refers to the current object instance.
+- `super`: Refers to the parent class or its methods and constructor.
+
+### Example:
+```javascript
+class Parent {
+  constructor() {
+    this.parentProperty = 'Parent Property';
+  }
+}
+
+class Child extends Parent {
+  constructor() {
+    super();
+    this.childProperty = 'Child Property';
+    console.log(this.parentProperty); // Access parent property using `this`
+  }
+}
+
+const child = new Child();
+// Output: Parent Property
+```
+
+## Getters and Setters
+- Getters: Special methods to make a property **readable**.
+- Setters: Special methods to make a property **writeable**.
+  - Useful for validating or modifying values during read/write operations.
+
+### Example:
+```javascript
+class Person {
+  constructor(name) {
+    this._name = name;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(value) {
+    if (value.length > 0) {
+      this._name = value;
+    } else {
+      console.log('Name cannot be empty.');
+    }
+  }
+}
+
+const person = new Person('Alice');
+console.log(person.name); // Output: Alice
+person.name = 'Bob';
+console.log(person.name); // Output: Bob
+person.name = ''; // Output: Name cannot be empty.
+```
+
+## Destructuring
+- Destructuring allows you to extract values from arrays or objects and assign them to variables in a convenient way.
+
+### Array Destructuring:
+- Use `[]` for array destructuring.
+
+### Example 1: Swap the Values of Two Variables
+```javascript
+let a = 5, b = 10;
+[a, b] = [b, a];
+console.log(a, b); // Output: 10 5
+```
+
+### Example 2: Swap Two Elements in an Array
+```javascript
+const arr = [1, 2, 3];
+[arr[0], arr[2]] = [arr[2], arr[0]];
+console.log(arr); // Output: [3, 2, 1]
+```
+
+### Example 3: Assign Array Elements to Variables
+```javascript
+const numbers = [10, 20, 30];
+const [x, y, z] = numbers;
+console.log(x, y, z); // Output: 10 20 30
+```
+
+### Object Destructuring:
+- Use `{}` for object destructuring.
+
+### Example 4: Extract Values from Objects
+```javascript
+const user = { name: 'Alice', age: 25 };
+const { name, age } = user;
+console.log(name, age); // Output: Alice 25
+```
+
+### Example 5: Destructure in Function Parameters
+```javascript
+const printDetails = ({ name, age }) => {
+  console.log(`Name: ${name}, Age: ${age}`);
+};
+
+const person = { name: 'Bob', age: 30 };
+printDetails(person); // Output: Name: Bob, Age: 30
+
