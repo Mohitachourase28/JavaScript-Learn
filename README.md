@@ -753,6 +753,7 @@ const printDetails = ({ name, age }) => {
 
 const person = { name: 'Bob', age: 30 };
 printDetails(person); // Output: Name: Bob, Age: 30
+```
 ---
 
 ## [09_jsPract9](./09_jsPract9/script.js)
