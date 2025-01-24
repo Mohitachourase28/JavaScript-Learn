@@ -194,3 +194,133 @@ This project is a collection of JavaScript concepts and examples I studied and i
 
 ---
 
+## [05_jsPract5](./05_jsPract5/)
+## Topics Covered  
+
+### 1. **Dice Roller Program**  
+- Created a program to simulate rolling a dice using a **for loop**.  
+- The program generates a random number for each roll and repeats the process for a specified number of rolls.  
+
+---
+
+### 2. **Random Password Generator**  
+- Built a **Random Password Generator** using a **function**.  
+- Features:  
+  - Generates passwords with random characters from a specified set (letters, numbers, symbols).  
+  - Adjustable password length for customization.  
+
+---
+
+### 3. **Callback Functions**  
+- Studied **callbacks**, which are functions passed as arguments to other functions.  
+- Used to handle asynchronous operations, such as:  
+  1. **Reading a file**: Process file content after reading is complete.  
+  2. **Network requests**: Perform actions after data is fetched from a server.  
+  3. **Interacting with databases**: Execute further logic after retrieving or updating data.  
+- Example:  
+  ```javascript  
+  function fetchData(callback) {  
+    console.log("Fetching data...");  
+    setTimeout(() => {  
+      console.log("Data fetched.");  
+      callback();  
+    }, 2000);  
+  }  
+  
+  function processData() {  
+    console.log("Processing data...");  
+  }  
+  
+  fetchData(processData);  
+  # JavaScript Concepts: Dice Roller, Password Generator, and Callbacks  
+
+This project showcases my journey in learning advanced JavaScript concepts by building practical programs, such as a **Dice Roller** and a **Random Password Generator**, while exploring callback functions and array methods.  
+
+---
+
+## Topics Covered  
+
+### 1. **Dice Roller Program**  
+- Simulated rolling a dice using a **for loop**.  
+- Generates a random number for each roll and repeats the process based on user input for the number of rolls.  
+
+---
+
+### 2. **Random Password Generator**  
+- Developed a **Random Password Generator** with a customizable **function**.  
+- Features:  
+  - Generates passwords using random characters from a specified set (letters, numbers, symbols).  
+  - Adjustable password length for personalized security needs.  
+
+---
+
+### 3. **Callback Functions**  
+- Learned about **callbacks**, which are functions passed as arguments to other functions for handling asynchronous operations.  
+- Key use cases explored:  
+  1. **Reading a file**: Processing file content after reading is complete.  
+  2. **Network requests**: Executing actions after receiving server data.  
+  3. **Database interactions**: Applying logic post-retrieval or update of data.  
+
+#### Example:  
+```javascript  
+function fetchData(callback) {  
+  console.log("Fetching data...");  
+  setTimeout(() => {  
+    console.log("Data fetched.");  
+    callback();  
+  }, 2000);  
+}  
+  
+function processData() {  
+  console.log("Processing data...");  
+}  
+  
+fetchData(processData);  
+```  
+
+---
+
+### 4. **Array Methods**  
+
+#### **`forEach()` Method**  
+- Learned how to iterate over array elements using the `forEach()` method.  
+- **Syntax**:  
+  ```javascript  
+  array.forEach(callback);  
+  ```  
+- Parameters provided by the `forEach()` callback:  
+  - `element`: The current array element.  
+  - `index`: The index of the current element.  
+  - `array`: The entire array being traversed.  
+
+#### Example:  
+```javascript  
+const numbers = [1, 2, 3, 4];  
+numbers.forEach((num, index) => {  
+  console.log(`Element: ${num}, Index: ${index}`);  
+});  
+```  
+
+---
+
+#### **`.map()` Method**  
+- Studied the `map()` method, which:  
+  - Accepts a callback function.  
+  - Applies the callback to each element of an array.  
+  - Returns a new array with transformed elements.  
+
+#### Example:  
+```javascript  
+const numbers = [1, 2, 3, 4];  
+const squared = numbers.map((num) => num * num);  
+console.log(squared); // Output: [1, 4, 9, 16]  
+```  
+
+---
+
+## Lessons Learned  
+- Loops and functions like `forEach()` and `map()` simplify working with arrays.  
+- Callback functions provide a way to handle asynchronous behavior in JavaScript.  
+- Building programs like the Dice Roller and Random Password Generator helps solidify foundational concepts and practice real-world applications.
+
+---
