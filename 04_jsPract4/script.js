@@ -145,7 +145,7 @@
 /**#26 03:31:33 Spread operator 📖
  * spread operator = ... allows and iterable such as an
  *                   array or string to be expanded
- *                   into seperate elements
+ *                   into separate elements
  *                   (unpacks the elements)
  
 // let number = [1,2,3,4,5];
