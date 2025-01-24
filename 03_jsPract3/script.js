@@ -53,13 +53,13 @@
 // console.log(username);
    
 
-//17. #Logical Operator = used to combine or manipulate boolean values
-//                        (true or false)
-//
-//                        AND = &&
-//                        OR = ||
-//                        NOT = !
+/*17. #Logical Operator = used to combine or manipulate boolean values
+                        (true or false)
 
+                       AND = &&
+                      OR = ||
+                      NOT = !
+*/
 // const temp = 38;
 
 // if (temp > 0 && temp <= 30) {
