@@ -500,3 +500,114 @@ product.details(); // Output: Laptop costs $1000.
 - Arrow functions provide a succinct syntax, especially for one-liners.
 - Objects help organize data and behavior in a structured way.
 ---
+
+## [07_jsPract7](./07_jsPract7/)
+# Topics Studied: JavaScript Concepts with Examples
+
+## `this` Keyword
+- The `this` keyword in JavaScript is a reference to the object where it is used. The value of `this` depends on the immediate context.
+
+### Example:
+```javascript
+const person = {
+  name: 'Alice',
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+};
+
+person.greet(); // Output: Hello, my name is Alice
+```
+
+- Note: The `this` keyword does **not** work with arrow functions because arrow functions do not have their own `this`. Instead, they inherit `this` from their surrounding lexical scope.
+
+### Example with Arrow Function:
+```javascript
+const person = {
+  name: 'Bob',
+  greet: () => {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+};
+
+person.greet(); // Output: Hello, my name is undefined
+```
+
+## Constructor
+- A constructor is a special method used to define properties and methods of objects in a class.
+
+### Example:
+```javascript
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+  }
+}
+
+const person1 = new Person('Charlie', 25);
+person1.greet(); // Output: Hi, I'm Charlie and I'm 25 years old.
+```
+
+## Class
+- Classes, introduced in ES6, provide a structured and cleaner way to create objects compared to traditional constructor functions.
+- Classes support encapsulation, inheritance, and the `static` keyword.
+
+### Example:
+```javascript
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+const animal = new Animal('Dog');
+animal.speak(); // Output: Dog makes a noise.
+```
+
+### Static Keyword
+- The `static` keyword defines properties or methods that belong to the class itself rather than the objects created from the class.
+
+### Example:
+```javascript
+class MathUtils {
+  static add(a, b) {
+    return a + b;
+  }
+}
+
+console.log(MathUtils.add(2, 3)); // Output: 5
+```
+
+## Inheritance
+- Inheritance allows a new class to inherit properties and methods from an existing class. This promotes code reusability.
+
+### Example:
+```javascript
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const dog = new Dog('Buddy');
+dog.speak(); // Output: Buddy barks.
+---
