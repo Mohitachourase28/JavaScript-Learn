@@ -66,12 +66,7 @@ This project is a collection of JavaScript concepts and examples I studied and i
   condition ? codeIfTrue : codeIfFalse;
 
 ## [03_jsPract3](./03_jsPract3)
-# JavaScript Concepts and Number Guessing Game  
-
-This project showcases my learning journey through essential JavaScript concepts, including string manipulation, logical operators, equality operators, loops, and the creation of a **Number Guessing Game**.  
-
 ---
-
 ## Topics Covered  
 
 ### 1. **String Slicing**  
@@ -130,3 +125,72 @@ This project showcases my learning journey through essential JavaScript concepts
 - Building projects like the **Number Guessing Game** helps apply concepts in a practical and engaging way.  
 
 ---
+
+## [04_jsPract4](./04_jsPract4/)
+## Topics Covered  
+
+### 1. **Functions**  
+- Studied **functions** as reusable sections of code.  
+- Key points:  
+  - Functions can be declared once and used multiple times.  
+  - To execute a function, you need to call it.  
+- Practiced examples to understand how to:  
+  - Define a function.  
+  - Pass parameters and return values.  
+
+---
+
+### 2. **Variable Scope**  
+- Explored **variable scope**, which defines where variables are recognized and accessible:  
+  - **Local Scope**: Variables declared inside a function or block are only accessible within that function or block.  
+  - **Global Scope**: Variables declared outside any function or block are accessible throughout the program.  
+- Practiced examples to differentiate between local and global variables.  
+
+---
+
+### 3. **Temperature Conversion Program**  
+- Created a program to convert temperatures between Celsius and Fahrenheit using functions.  
+- Demonstrates practical use of functions, variable scope, and conditional logic.  
+
+---
+
+### 4. **Arrays**  
+- Learned about **arrays**, which are structures that can hold multiple values.  
+- Practiced array methods to manipulate data:  
+  - **push()**: Adds an element to the end of an array.  
+  - **pop()**: Removes the last element of an array.  
+  - **unshift()**: Adds an element to the beginning of an array.  
+  - **shift()**: Removes the first element of an array.  
+- Implemented examples to understand array operations.  
+
+---
+
+### 5. **Spread and Rest Operators**  
+- Studied the **spread operator (`...`)**:  
+  - Expands an array or string into individual elements.  
+  - Example:  
+    ```javascript  
+    const numbers = [1, 2, 3];  
+    console.log(...numbers); // Output: 1 2 3  
+    ```  
+- Studied the **rest parameter (`...rest`)**:  
+  - Bundles multiple arguments into an array.  
+  - Example:  
+    ```javascript  
+    function sum(...rest) {  
+      return rest.reduce((total, num) => total + num, 0);  
+    }  
+    console.log(sum(1, 2, 3)); // Output: 6  
+    ```  
+- Compared the use of spread and rest operators and practiced examples to understand their differences.  
+
+---
+
+## Lessons Learned  
+- Functions and variable scope help create clean, modular, and reusable code.  
+- Arrays provide a flexible way to store and manipulate multiple values.  
+- Spread and rest operators enhance code readability and efficiency when working with arrays and arguments.  
+- The **Temperature Conversion Program** reinforced how to apply these concepts in solving real-world problems.  
+
+---
+
