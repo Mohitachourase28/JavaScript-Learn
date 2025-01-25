@@ -185,7 +185,7 @@ function playGame(playerChoice) {
 }
 */
 
-/**#69 10:18:14 ⭐ Image Slider 🖼️ */
+/**#69 10:18:14 ⭐ Image Slider 🖼️ 
 const slides = document.querySelectorAll(".slides img");
 let slideIndex = 0;
 let intervalId = null;
@@ -229,3 +229,4 @@ function nextSlide(){
     showSlide(slideIndex);
 }
 
+*/
