@@ -1497,3 +1497,164 @@ console.log(jsonArray);
 With the use of Promises, Async/Await, and JSON, you can effectively manage asynchronous operations and data exchange in JavaScript.
 
 ---
+
+
+## [14_jsPract14](./14_jsPract14/script.js)
+### README.md
+
+# Topics Covered: Fetch Data from an API and Weather App Project 🌐☀️
+
+---
+
+## **1. Fetch API Overview**  
+The `fetch` function is a modern way to make HTTP requests to retrieve resources such as JSON data, images, and files asynchronously. It simplifies the process of fetching data over the web, allowing interaction with APIs to retrieve or send data.
+
+### **Syntax**  
+```javascript
+fetch(url, { options })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Network response was not OK");
+    }
+    return response.json();
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error("Fetch Error:", error));
+```
+
+### **Options**
+- **Method**: HTTP method (`GET`, `POST`, `PUT`, `DELETE`, etc.).
+- **Headers**: Additional information, such as `Content-Type`.
+- **Body**: Data sent with the request (for `POST` or `PUT` methods).
+
+---
+
+## **2. Fetch Example: Retrieve JSON Data**
+### Example: Basic API Call
+```javascript
+const url = "https://api.example.com/data";
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    console.log("Fetched Data:", data);
+  })
+  .catch(error => console.error("Error:", error));
+```
+
+---
+
+## **3. Fetch Example: Sending Data**
+### Example: `POST` Request
+```javascript
+const postData = {
+  name: "John Doe",
+  age: 30,
+};
+
+fetch("https://api.example.com/addUser", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(postData),
+})
+  .then(response => response.json())
+  .then(data => console.log("Response:", data))
+  .catch(error => console.error("Error:", error));
+```
+
+---
+
+## **4. Weather App Project 🌦️**  
+### **Description**  
+The Weather App uses the Fetch API to retrieve real-time weather data from an external weather API (e.g., OpenWeatherMap). It dynamically updates the UI with the current weather based on the user's input (e.g., city name).
+
+---
+
+### **Steps to Build the Weather App**
+1. **Get an API Key**  
+   Sign up on a weather API platform like [OpenWeatherMap](https://openweathermap.org/) to get an API key.
+   
+2. **HTML Structure**  
+   Create a simple form for user input and a display section for weather data.  
+   ```html
+   <div id="app">
+     <h1>Weather App</h1>
+     <form id="weatherForm">
+       <input type="text" id="city" placeholder="Enter city name" required />
+       <button type="submit">Get Weather</button>
+     </form>
+     <div id="weatherInfo"></div>
+   </div>
+   ```
+
+3. **JavaScript Code**  
+   Fetch weather data based on the user’s input and display it dynamically.
+   ```javascript
+   const form = document.getElementById("weatherForm");
+   const weatherInfo = document.getElementById("weatherInfo");
+
+   form.addEventListener("submit", (event) => {
+     event.preventDefault();
+     const city = document.getElementById("city").value;
+     const apiKey = "YOUR_API_KEY";
+     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+     fetch(url)
+       .then(response => {
+         if (!response.ok) {
+           throw new Error("City not found");
+         }
+         return response.json();
+       })
+       .then(data => {
+         weatherInfo.innerHTML = `
+           <h2>Weather in ${data.name}</h2>
+           <p>Temperature: ${data.main.temp}°C</p>
+           <p>Weather: ${data.weather[0].description}</p>
+         `;
+       })
+       .catch(error => {
+         weatherInfo.innerHTML = `<p>Error: ${error.message}</p>`;
+       });
+   });
+   ```
+
+4. **CSS Styling**  
+   Add some basic styling to improve the user experience.
+   ```css
+   #app {
+     text-align: center;
+     font-family: Arial, sans-serif;
+   }
+
+   #weatherForm {
+     margin-bottom: 20px;
+   }
+
+   #weatherInfo {
+     font-size: 1.2em;
+     margin-top: 20px;
+   }
+   ```
+
+---
+
+### **Example Output**  
+1. User enters `New York` in the input field and clicks the **Get Weather** button.
+2. Output:  
+   ```
+   Weather in New York
+   Temperature: 15°C
+   Weather: Clear sky
+   ```
+
+---
+
+## **Benefits of Fetch API**  
+- Clean syntax for asynchronous operations.
+- Native support in modern browsers.
+- Flexible for handling various HTTP requests.
+
+---
