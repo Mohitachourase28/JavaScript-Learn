@@ -1188,3 +1188,170 @@ toggleButton.addEventListener("click", () => {
 ---
 
 
+## [12_jsPract12](./12_jsPract12/script.js)
+# Learning Notes
+
+## Topics Covered
+
+### NodeList
+- A **NodeList** is a static collection of HTML elements retrieved by methods such as `querySelectorAll()`.
+- It is similar to an array but does not support array methods like `map()`, `filter()`, and `reduce()`.
+- **Static Nature**: The NodeList does not update automatically to reflect changes in the DOM.
+
+#### Example:
+```javascript
+const buttons = document.querySelectorAll('.btn');
+console.log(buttons); // Static collection of elements with class 'btn'
+```
+
+---
+
+### Adding HTML/CSS Properties
+You can dynamically update the styles and properties of HTML elements using JavaScript.
+
+#### Example:
+```javascript
+const heading = document.querySelector('h1');
+heading.style.color = 'blue';
+heading.style.fontSize = '2rem';
+```
+
+---
+
+### Event Listeners
+#### CLICK Event Listener
+- Responds to user click actions on elements.
+
+#### Example:
+```javascript
+const button = document.querySelector('.btn');
+button.addEventListener('click', () => {
+    console.log('Button clicked!');
+});
+```
+
+#### MOUSEOVER and MOUSEOUT Event Listeners
+- Triggered when the mouse enters (`mouseover`) or leaves (`mouseout`) an element.
+
+#### Example:
+```javascript
+const image = document.querySelector('.image');
+image.addEventListener('mouseover', () => {
+    image.style.opacity = '0.5';
+});
+image.addEventListener('mouseout', () => {
+    image.style.opacity = '1';
+});
+```
+
+---
+
+### Adding and Appending Elements to the DOM
+#### ADD an Element
+- Create a new element and add content to it.
+
+#### Example:
+```javascript
+const newButton = document.createElement('button');
+newButton.textContent = 'Click Me';
+```
+
+#### APPEND Element to the DOM
+- Add the newly created element to the document.
+
+#### Example:
+```javascript
+const buttonsDiv = document.getElementById('buttons');
+buttonsDiv.append(newButton);
+```
+
+---
+
+### Removing an Element
+- Remove a specific element from the DOM.
+
+#### Example:
+```javascript
+buttonsDiv.removeChild(newButton); // Removes the button
+```
+
+---
+
+### classList
+- The `classList` property allows manipulation of an element's CSS classes.
+
+#### Methods:
+- **add()**: Add a new class.
+- **remove()**: Remove an existing class.
+- **toggle()**: Add/remove a class based on its presence.
+- **replace()**: Replace an old class with a new one.
+- **contains()**: Check if an element has a specific class.
+
+#### Example:
+```javascript
+const box = document.querySelector('.box');
+box.classList.add('highlight');
+box.classList.toggle('hidden');
+if (box.classList.contains('highlight')) {
+    console.log('Box is highlighted!');
+}
+```
+
+---
+
+### Rock Paper Scissors Game
+A simple interactive game created using JavaScript.
+
+#### Example Code:
+```javascript
+const choices = ['rock', 'paper', 'scissors'];
+const userChoice = 'rock';
+const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+if (userChoice === computerChoice) {
+    console.log('It’s a tie!');
+} else if (
+    (userChoice === 'rock' && computerChoice === 'scissors') ||
+    (userChoice === 'scissors' && computerChoice === 'paper') ||
+    (userChoice === 'paper' && computerChoice === 'rock')
+) {
+    console.log('You win!');
+} else {
+    console.log('You lose!');
+}
+```
+
+---
+
+### Image Slider
+A program that allows users to navigate through images using buttons.
+
+#### Example Code:
+```javascript
+const images = ['img1.jpg', 'img2.jpg', 'img3.jpg'];
+let currentIndex = 0;
+
+const imgElement = document.querySelector('.slider img');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    imgElement.src = images[currentIndex];
+});
+
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    imgElement.src = images[currentIndex];
+});
+```
+
+---
+
+## Summary
+- **NodeList**: Static collection for HTML elements.
+- **Event Listeners**: Adding interactivity to web pages.
+- **classList**: Efficiently manage CSS classes.
+- **Rock Paper Scissors**: Fun game implementation.
+- **Image Slider**: Navigable image carousel.
+
