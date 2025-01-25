@@ -901,8 +901,7 @@ console.log("End");
 ```
 ---
 
-## [10_jsPract10](./10_jsPract10/script.js)
-## [10_jsPract10](./10_jsPract10/mathUtil.js)
+## [10_jsPract10/script.js](./10_jsPract10/script.js)
 
 # Topics Studied: JavaScript Concepts with Examples
 
@@ -1082,6 +1081,110 @@ console.log(calculator(5, 3, '*')); // Output: 15
    ```javascript
    const elements = document.querySelectorAll(".item");
    elements.forEach(el => console.log(el));
-   
+---
+
+## [11_jsPract11](./11_jsPract11/script.js)
+# DOM Navigation and Events
+
+This document covers the topics I studied, including examples, on navigating the DOM, manipulating HTML elements, and handling events in JavaScript.
+
+---
+
+## 1. **DOM Navigation**
+The process of navigating through the structure of an HTML document using JavaScript.
+
+### Methods for Navigation:
+- `.firstElementChild` - Selects the first child element.
+- `.lastElementChild` - Selects the last child element.
+- `.nextElementSibling` - Selects the next sibling element.
+- `.previousElementSibling` - Selects the previous sibling element.
+- `.parentElement` - Selects the parent element.
+- `.children` - Selects all child elements.
+
+### Example:
+```javascript
+const fruitsList = document.getElementById("fruits");
+console.log(fruitsList.firstElementChild.textContent); // Logs the first child's text content
+console.log(fruitsList.lastElementChild.textContent);  // Logs the last child's text content
+```
+
+---
+
+## 2. **Adding & Changing HTML**
+
+### Steps to Add an Element:
+1. **Create the Element**:
+   ```javascript
+   const newListItem = document.createElement("li");
+   ```
+2. **Add Attributes/Properties**:
+   ```javascript
+   newListItem.textContent = "Coconut";
+   ```
+3. **Append Element to DOM**:
+   ```javascript
+   document.getElementById("fruits").append(newListItem);
+   ```
+4. **Remove HTML Element**:
+   ```javascript
+   document.getElementById("fruits").removeChild(newListItem);
+   ```
+
+---
+
+## 3. **Mouse Events 🖱**
+
+Event listeners are used to make web pages interactive by responding to mouse actions like clicks, hovering, etc.
+
+### Common Events:
+- `click`
+- `mouseover`
+- `mouseout`
+
+### Example:
+```javascript
+const button = document.querySelector("button");
+button.addEventListener("click", () => {
+    alert("Button clicked!");
+});
+```
+
+---
+
+## 4. **Key Events ⌨**
+
+Key events allow capturing user input through the keyboard.
+
+### Common Events:
+- `keydown` - Fires when a key is pressed.
+- `keyup` - Fires when a key is released.
+
+### Example:
+```javascript
+document.addEventListener("keydown", (event) => {
+    console.log(`Key pressed: ${event.key}`);
+});
+```
+
+---
+
+## 5. **Hide/Show HTML**
+
+JavaScript can dynamically hide or show elements on the page.
+
+### Example:
+```javascript
+const element = document.getElementById("content");
+const toggleButton = document.getElementById("toggle");
+
+toggleButton.addEventListener("click", () => {
+    if (element.style.display === "none") {
+        element.style.display = "block";
+    } else {
+        element.style.display = "none";
+    }
+});
 ```
 ---
+
+
