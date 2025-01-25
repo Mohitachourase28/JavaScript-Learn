@@ -1500,8 +1500,6 @@ With the use of Promises, Async/Await, and JSON, you can effectively manage asyn
 
 
 ## [14_jsPract14](./14_jsPract14/script.js)
-### README.md
-
 # Topics Covered: Fetch Data from an API and Weather App Project 🌐☀️
 
 ---
