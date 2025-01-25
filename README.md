@@ -1355,3 +1355,145 @@ prevBtn.addEventListener('click', () => {
 - **Rock Paper Scissors**: Fun game implementation.
 - **Image Slider**: Navigable image carousel.
 
+---
+
+## [13_jsPract13](./13_jsPract13/script.js)
+# Topics Covered
+
+## Callback Hell
+Callback Hell is a situation in JavaScript where callbacks are nested within other callbacks to the degree where the code becomes difficult to read and maintain. This is an old pattern used to handle asynchronous functions. To avoid Callback Hell, we can use Promises and async/await.
+
+**Example of Callback Hell:**
+```javascript
+function walkDog(callback) {
+    console.log("Walking the dog...");
+    setTimeout(() => {
+        callback();
+    }, 1000);
+}
+
+function cleanKitchen(callback) {
+    console.log("Cleaning the kitchen...");
+    setTimeout(() => {
+        callback();
+    }, 1000);
+}
+
+function takeOutTrash(callback) {
+    console.log("Taking out the trash...");
+    setTimeout(() => {
+        callback();
+    }, 1000);
+}
+
+walkDog(() => {
+    cleanKitchen(() => {
+        takeOutTrash(() => {
+            console.log("All chores done!");
+        });
+    });
+});
+```
+
+---
+
+## Promises
+A Promise in JavaScript is an object that manages asynchronous operations. It allows you to handle asynchronous code more effectively and avoid Callback Hell. A Promise can have three states: **Pending**, **Resolved**, or **Rejected**.
+
+**Example with Promises:**
+```javascript
+function walkDog() {
+    return new Promise((resolve) => {
+        console.log("Walking the dog...");
+        setTimeout(() => resolve("Dog walked"), 1000);
+    });
+}
+
+function cleanKitchen() {
+    return new Promise((resolve) => {
+        console.log("Cleaning the kitchen...");
+        setTimeout(() => resolve("Kitchen cleaned"), 1000);
+    });
+}
+
+function takeOutTrash() {
+    return new Promise((resolve) => {
+        console.log("Taking out the trash...");
+        setTimeout(() => resolve("Trash taken out"), 1000);
+    });
+}
+
+walkDog()
+    .then((message) => {
+        console.log(message);
+        return cleanKitchen();
+    })
+    .then((message) => {
+        console.log(message);
+        return takeOutTrash();
+    })
+    .then((message) => {
+        console.log(message);
+        console.log("All chores done!");
+    });
+```
+
+---
+
+## Async/Await
+Async/Await allows you to write asynchronous code in a synchronous manner, making it more readable and easier to manage. `async` makes a function return a Promise, while `await` makes an async function wait for a Promise to resolve.
+
+**Example with Async/Await:**
+```javascript
+async function performChores() {
+    try {
+        console.log(await walkDog());
+        console.log(await cleanKitchen());
+        console.log(await takeOutTrash());
+        console.log("All chores done!");
+    } catch (error) {
+        console.error("Error performing chores:", error);
+    }
+}
+
+performChores();
+```
+
+---
+
+## JSON
+JSON (JavaScript Object Notation) is a lightweight data-interchange format used for exchanging data between a server and a web application. It represents data as key-value pairs or arrays.
+
+### Methods:
+- **`JSON.stringify()`**: Converts a JavaScript object to a JSON string.
+- **`JSON.parse()`**: Converts a JSON string back to a JavaScript object.
+
+**Example:**
+```javascript
+const data = {
+    name: "John",
+    age: 30,
+    hobbies: ["reading", "cycling"],
+};
+
+// Convert object to JSON string
+const jsonData = JSON.stringify(data);
+console.log(jsonData);
+
+// Convert JSON string back to object
+const parsedData = JSON.parse(jsonData);
+console.log(parsedData);
+
+// Example with JSON array
+const jsonArray = JSON.stringify([
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+]);
+console.log(jsonArray);
+```
+
+---
+
+With the use of Promises, Async/Await, and JSON, you can effectively manage asynchronous operations and data exchange in JavaScript.
+
+---
